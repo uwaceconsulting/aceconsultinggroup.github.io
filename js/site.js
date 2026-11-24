@@ -100,6 +100,8 @@ if (art) {
         : `<p class="lede">${esc(s.teaser)}</p>`}</div>
       ${more(s)}`;
     window.scrollTo(0, 0);
+    // opening and 'next story' swap the text in place, so give the swap a short rise (skipped under reduced motion)
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) art.animate([{ opacity: 0, translate: "0 18px" }, { opacity: 1, translate: "0 0" }], { duration: 600, easing: "cubic-bezier(.16,1,.3,1)" });
   };
   window.addEventListener("hashchange", show); show();
 }
@@ -113,7 +115,7 @@ if (teamEl) {
     ["associate", "Associates", "Conduct market research and growth analysis, build core deliverables and case studies, and present final recommendations to clients.", ""]];
   teamEl.innerHTML = groups.map(([g, title, desc, cols]) => {
     const ppl = TEAM.filter(p => p.group === g); if (!ppl.length) return "";
-    return `<section class="group" id="${g}"><h2>${title}</h2><p>${desc}</p><div class="people ${cols}">${ppl.map(p => `
+    return `<section class="group" id="${g}"><div class="ghead"><h2 data-split>${title}</h2><p data-reveal>${desc}</p></div><div class="people ${cols}" data-stagger>${ppl.map(p => `
       <article class="person"><figure><img src="img/team/${esc(p.photo.includes(".") ? p.photo : p.photo + ".webp")}" alt="${esc(p.name)}" loading="lazy" width="560" height="700"></figure>
       <div class="row"><div><h3>${esc(p.name)}</h3><p class="role">${roleName[g]}</p></div>
       ${p.linkedin ? `<a class="li" href="${esc(p.linkedin)}" aria-label="${esc(p.name)} on LinkedIn">${ICON.linkedin}</a>` : ""}</div>

@@ -6,8 +6,8 @@
 <title>ACE Consulting Group</title>
 <meta name="description" content="Student-run, pro bono consulting for start-ups at the University of Waterloo. Strategy, market research and operational advisory.">
 <script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.__aceMotion)document.documentElement.classList.remove("js")},3000)</script>
-<link rel="preload" href="fonts/cabinet-grotesk-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/newsreader-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="img/team-group.webp" as="image" type="image/webp">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="img/logo-navy.png">
@@ -19,9 +19,10 @@
   <img class="bg" src="img/team-group.webp" alt="The ACE Consulting Group team, Fall 2026. Photo: ACE Consulting Group" width="1800" height="1200" fetchpriority="high">
   <div class="copy">
     <h1 data-split>Helping the start-up community grow</h1>
-    <p class="lead">A student-run, pro bono consulting group at the University of Waterloo. Strategy, market research and operations, free of charge.</p>
+    <p class="lead">ACE is a student-run, pro bono consulting group at the University of Waterloo. We give start-ups and entrepreneurs strategy, market research and operational advice, free of charge.</p>
     <div class="btns"><a class="btn" data-clientform href="#">Work with us</a><a class="btn ghost" href="services.html">Our services</a></div>
   </div>
+  <div class="fig-tile"><b data-clients>100+</b><span>start-ups and organizations advised</span></div>
 </section>
 
 <section class="band navyband">
@@ -36,8 +37,7 @@
 <section class="band">
   <div class="wrap">
     <div class="head"><h2 data-split>What we do</h2><p class="lead" data-reveal>Three core services, tailored to where your company is right now. If you need something else, ask; we shape every engagement around the client.</p></div>
-    <div class="svc" id="services" data-stagger="up"></div>
-    <p class="more"><a class="btn ghost" href="services.html#cases">See case studies</a></p>
+    <div class="svc" id="services" data-link="1" data-stagger="up"></div>
   </div>
 </section>
 
@@ -49,8 +49,9 @@
     </div>
     <figure class="logos" data-reveal="wipe"><img src="img/clients.webp" alt="Logos of past clients including Acorn, Grobo, Beagle, Airo, Ticketfi, PackAnts, OnPoint Sports, ApplyBoard, Exvivo and Poet" width="1500" height="872" loading="lazy"></figure>
     <div class="quote" data-reveal>
-      <blockquote>&ldquo;ACE was a very valuable resource to us. The team was incredibly dedicated throughout the project.&rdquo;</blockquote>
-      <p>CodeGem, past ACE client</p>
+      <svg class="qmark" viewBox="0 0 44 44" aria-hidden="true"><rect width="20" height="20" rx="1.5" fill="#3a78b8"/><rect x="24" width="20" height="20" rx="1.5" fill="#4cc6f2"/><path d="M0 24h20v4C20 37 13 43 4 44v-6c5-1 8-4 8-10H0z" fill="#3a78b8"/></svg>
+      <blockquote>ACE was a very valuable resource to us. The team was incredibly dedicated throughout the project, gathered high quality research, and came up with great ideas.</blockquote>
+      <p>CodeGem</p>
     </div>
   </div>
 </section>
@@ -58,14 +59,14 @@
 <section class="band">
   <div class="wrap">
     <div class="head"><h2 data-split>Alumni stories</h2><p class="lead" data-reveal>Our <span data-alumni>114</span> alumni work in consulting, product, accounting and start-ups. Here's what they've learned along the way.</p></div>
-    <div class="rail" id="latestStories" data-count="7" data-stagger tabindex="0" role="region" aria-label="Alumni stories, scroll sideways"></div>
+    <div class="rail" id="latestStories" data-count="3" data-carousel data-stagger tabindex="0" role="region" aria-label="Alumni stories, scroll sideways"></div>
     <p class="more"><a class="btn ghost" href="alumni.html#stories">Read all stories</a></p>
   </div>
 </section>
 
 <section class="band tint">
   <div class="wrap doors" data-stagger="up">
-    <div class="door a"><h2>Building a start-up?</h2><p>Tell us about your company and what you need. Our engagements are free.</p><a class="btn" data-clientform href="#">Work with us</a></div>
+    <div class="door a"><h2>Building a start-up?</h2><p>Tell us about your company and what you need. Our engagements are free.</p><a class="btn" data-clientform href="#">Fill out the client form</a></div>
     <div class="door b"><h2>Waterloo student?</h2><p>We recruit new Associates every September. No consulting experience needed.</p><a class="btn ghost" href="join.html">How to join</a></div>
   </div>
 </section>

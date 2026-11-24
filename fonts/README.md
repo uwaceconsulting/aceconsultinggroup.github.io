@@ -1,24 +1,22 @@
 # Fonts
 
-Cabinet Grotesk (headings) and Satoshi (body), from Fontshare. Both are under the
-ITF Free Font License v2.0: https://www.fontshare.com/licenses/itf-ffl
-(checked 2026-11-24).
+**In use**
 
-**Allowed by the license:** free for commercial use, and self-hosting on your own
-website through `@font-face` ("permitted and recommended", section 01).
+- `newsreader-var.woff2`: headlines (Newsreader, regular weight). Closest free match we found to the serif Citadel uses.
+- `figtree-var.woff2`: body text and buttons (Figtree).
 
-**Not allowed:** editing, subsetting or converting the files, and handing them to
-anyone else (section 02).
+Both are under the SIL Open Font License 1.1, which allows self-hosting and redistribution,
+so they can sit in this public repo. The license texts are `OFL-Newsreader.txt` and
+`OFL-Figtree.txt`. Keep them next to the font files. Files are the latin subset, straight
+from Google Fonts, not modified.
 
-**Open question:** section 02 also lists "repository" and "publicly accessible
-servers" as banned ways of distributing the files, while saying it does not
-restrict self-hosting on your own site. These files sit in a public GitHub repo
-because GitHub Pages serves them from there. That is how most people self-host on
-Pages, but the wording is not clear. If the club wants zero doubt, either:
+**Not in use**
 
-1. load the fonts from the Fontshare API link instead (allowed by the license, one
-   extra third-party request), or
-2. swap to open-license fonts (SIL OFL) such as Geist or Outfit, which can sit in a
-   public repo with no question.
+The six `cabinet-grotesk-*.woff2` and `satoshi-*.woff2` files are left over from the first
+design. Nothing loads them. They come from Fontshare (ITF Free Font License v2.0), whose
+section 02 is unclear about public repositories, so they should be removed from the repo.
 
-The files here are the untouched woff2 files from the Fontshare API.
+**Why not Citadel's exact fonts**
+
+Citadel uses Signifier (Klim Type Foundry) for headlines and TT Commons (TypeType) for body.
+Both are paid. To use them, license them and drop the woff2 files in here.
