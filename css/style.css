@@ -2,7 +2,7 @@
    IDEA    faces first: real students, big, before any claim. The people are the proof
    PICTURE team photo full bleed in the hero; campus and alumni photos carry the other panels
    COLOUR  unchanged ACE navy ground, brighter navy bands, one cyan accent. Dark only, on purpose
-   TYPE    Cabinet Grotesk 800 for headings + Satoshi for text (self-hosted in fonts/, free for web use)
+   TYPE    Cabinet Grotesk 800 for headings + Satoshi for text (self-hosted in fonts/, ITF Free Font License, see fonts/README.md)
    SHAPE   one rule: buttons 6px, cards and photos 4px, tags and filters pill
    LAYOUT  laptop: headline over the photo, bento services, scroll-snap story rail; phone: photo on top, text below */
 
@@ -252,7 +252,7 @@ blockquote+p{margin-top:16px;color:var(--muted);font-weight:600}
 .hero .btns{margin-top:28px}
 @media(max-width:899px){
 .hero{display:block;min-height:0}
-.hero .bg{position:static;height:auto;aspect-ratio:3/2;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent);mask-image:linear-gradient(to bottom,#000 62%,transparent)}
+.hero .bg{position:static;height:auto;aspect-ratio:3/2;-webkit-mask-image:linear-gradient(to bottom,var(--bg) 62%,transparent);mask-image:linear-gradient(to bottom,var(--bg) 62%,transparent)}
 .hero::after{display:none}
 .hero .copy{position:relative;margin-top:-28px;padding-bottom:44px}}
 
@@ -303,3 +303,5 @@ blockquote+p{margin-top:16px;color:var(--muted);font-weight:600}
 @keyframes settle{from{transform:scale(1.06)}}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}}}
 .nb{white-space:nowrap}
+/* short laptop screens (1366x768, 1280x720): lift the photo so faces clear the headline block. Ceiling gets cropped, faces do not */
+@media(min-width:900px) and (max-height:820px){.hero .bg{top:-110px;height:calc(100% + 110px)}}
