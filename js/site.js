@@ -63,7 +63,7 @@ const storyCard = s => `<a class="story" href="story.html#${esc(s.slug)}" data-t
   <h3>${esc(s.title)}</h3><p>${esc(s.teaser)}</p><span class="meta">${esc(s.author)} · ${fmtDate(s.date)}</span></div></a>`;
 
 const latest = document.getElementById("latestStories");
-if (latest) latest.innerHTML = STORIES.slice(0, 3).map(storyCard).join("");
+if (latest) latest.innerHTML = STORIES.slice(0, +latest.dataset.count || 3).map(storyCard).join("");
 
 const all = document.getElementById("allStories");
 if (all) {

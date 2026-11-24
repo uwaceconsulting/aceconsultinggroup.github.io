@@ -5,33 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ACE Consulting Group</title>
 <meta name="description" content="Student-run, pro bono consulting for start-ups at the University of Waterloo. Strategy, market research and operational advisory.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preload" href="fonts/cabinet-grotesk-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/team-group.webp" as="image" type="image/webp">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="img/logo-navy.png">
 </head>
 <body data-page="home">
 <header class="top" id="top"></header>
 <main>
-<section class="band hero">
-  <div class="wrap">
-    <div class="copy">
-      <h1>Helping the start-up community grow</h1>
-      <p class="lead">ACE is a student-run, pro bono consulting group at the University of Waterloo. We give start-ups and entrepreneurs strategy, market research and operational advice, free of charge.</p>
-      <div class="btns"><a class="btn" data-clientform href="#">Work with us</a><a class="btn ghost" href="services.html">Our services</a></div>
-    </div>
-    <div class="mark" aria-label="ACE in pictures">
-      <div><img src="img/team-group.webp" alt="The ACE Consulting Group team, Fall 2026" width="1800" height="1200"></div>
-      <div class="fig-tile"><b data-clients>100+</b><span>start-ups and organizations advised</span></div>
-      <div><img src="img/campus.webp" alt="University of Waterloo campus" width="1800" height="1350"></div>
-      <div class="arc" data-arc="#2a6099"></div>
-    </div>
+<section class="hero">
+  <img class="bg" src="img/team-group.webp" alt="The ACE Consulting Group team, Fall 2026. Photo: ACE Consulting Group" width="1800" height="1200" fetchpriority="high">
+  <div class="copy">
+    <h1>Helping the <span class="nb">start-up</span> community grow</h1>
+    <p class="lead">A student-run, pro bono consulting group at the University of Waterloo. Strategy, market research and operations, free of charge.</p>
+    <div class="btns"><a class="btn" data-clientform href="#">Work with us</a><a class="btn ghost" href="services.html">Our services</a></div>
   </div>
 </section>
 
 <section class="band navyband">
-  <div class="wrap stats">
+  <div class="wrap stats" data-reveal>
     <div><b data-clients>100+</b><span>clients in Kitchener-Waterloo and beyond</span></div>
     <div><b data-years>17</b><span>years advising start-ups</span></div>
     <div><b>29</b><span>Velocity Fund finals winners among our clients</span></div>
@@ -41,37 +35,37 @@
 
 <section class="band">
   <div class="wrap">
-    <div class="head"><h2>What we do</h2><p class="lead">Three core services, tailored to where your company is right now. If you need something else, ask; we shape every engagement around the client.</p></div>
-    <div class="svc" id="services" data-link="1"></div>
+    <div class="head" data-reveal><h2>What we do</h2><p class="lead">Three core services, tailored to where your company is right now. If you need something else, ask; we shape every engagement around the client.</p></div>
+    <div class="svc" id="services" data-reveal></div>
+    <p class="more"><a class="btn ghost" href="services.html#cases">See case studies</a></p>
   </div>
 </section>
 
-<section class="band tint">
-  <div class="wrap split">
-    <div class="logos"><img src="img/clients.webp" alt="Logos of past clients including Acorn, Grobo, Beagle, Airo, Ticketfi, PackAnts, OnPoint Sports, ApplyBoard, Exvivo and Poet" width="1500" height="872" loading="lazy"></div>
-    <div class="stack">
+<section class="band tint clients">
+  <div class="wrap">
+    <div class="stack" data-reveal>
       <h2>Trusted by founders</h2>
       <p class="lead">Our clients include Velocity Fund winners, Y Combinator and HAXLR8R graduates and Dragons' Den alumni.</p>
-      <div>
-        <svg class="qmark" viewBox="0 0 44 44" aria-hidden="true"><rect width="20" height="20" rx="1.5" fill="#3a78b8"/><rect x="24" width="20" height="20" rx="1.5" fill="#4cc6f2"/><path d="M0 24h20v4C20 37 13 43 4 44v-6c5-1 8-4 8-10H0z" fill="#3a78b8"/></svg>
-        <blockquote>ACE was a very valuable resource to us. The team was incredibly dedicated throughout the project, gathered high quality research, and came up with great ideas.</blockquote>
-        <p>CodeGem</p>
-      </div>
+    </div>
+    <figure class="logos" data-reveal><img src="img/clients.webp" alt="Logos of past clients including Acorn, Grobo, Beagle, Airo, Ticketfi, PackAnts, OnPoint Sports, ApplyBoard, Exvivo and Poet" width="1500" height="872" loading="lazy"></figure>
+    <div class="quote" data-reveal>
+      <blockquote>&ldquo;ACE was a very valuable resource to us. The team was incredibly dedicated throughout the project.&rdquo;</blockquote>
+      <p>CodeGem, past ACE client</p>
     </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <div class="head"><h2>Alumni stories</h2><p class="lead">Our <span data-alumni>114</span> alumni work in consulting, product, accounting and start-ups. Here's what they've learned along the way.</p></div>
-    <div class="cards" id="latestStories"></div>
-    <p style="margin-top:28px"><a class="btn ghost" href="alumni.html#stories">Read all stories</a></p>
+    <div class="head" data-reveal><h2>Alumni stories</h2><p class="lead">Our <span data-alumni>114</span> alumni work in consulting, product, accounting and start-ups. Here's what they've learned along the way.</p></div>
+    <div class="rail" id="latestStories" data-count="7" tabindex="0" role="region" aria-label="Alumni stories, scroll sideways"></div>
+    <p class="more"><a class="btn ghost" href="alumni.html#stories">Read all stories</a></p>
   </div>
 </section>
 
 <section class="band tint">
-  <div class="wrap doors">
-    <div class="door a"><h2>Building a start-up?</h2><p>Tell us about your company and what you need. Our engagements are free.</p><a class="btn" data-clientform href="#">Fill out the client form</a></div>
+  <div class="wrap doors" data-reveal>
+    <div class="door a"><h2>Building a start-up?</h2><p>Tell us about your company and what you need. Our engagements are free.</p><a class="btn" data-clientform href="#">Work with us</a></div>
     <div class="door b"><h2>Waterloo student?</h2><p>We recruit new Associates every September. No consulting experience needed.</p><a class="btn ghost" href="join.html">How to join</a></div>
   </div>
 </section>
@@ -79,5 +73,6 @@
 <footer class="foot" id="foot"></footer>
 <script src="js/content.js"></script>
 <script src="js/site.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
