@@ -115,7 +115,7 @@ if (teamEl) {
     ["associate", "Associates", "Conduct market research and growth analysis, build core deliverables and case studies, and present final recommendations to clients.", ""]];
   teamEl.innerHTML = groups.map(([g, title, desc, cols]) => {
     const ppl = TEAM.filter(p => p.group === g); if (!ppl.length) return "";
-    return `<section class="group" id="${g}"><div class="ghead"><h2 data-split>${title}</h2><p data-reveal>${desc}</p></div><div class="people ${cols}" data-stagger>${ppl.map(p => `
+    return `<section class="group" id="${g}"><div class="ghead"><h2 data-split>${title}</h2><p data-reveal>${desc}</p></div><div class="people ${cols}">${ppl.map(p => `
       <article class="person"><figure><img src="img/team/${esc(p.photo.includes(".") ? p.photo : p.photo + ".webp")}" alt="${esc(p.name)}" loading="lazy" width="560" height="700"></figure>
       <div class="row"><div><h3>${esc(p.name)}</h3><p class="role">${roleName[g]}</p></div>
       ${p.linkedin ? `<a class="li" href="${esc(p.linkedin)}" aria-label="${esc(p.name)} on LinkedIn">${ICON.linkedin}</a>` : ""}</div>
@@ -132,4 +132,9 @@ if (svcEl) svcEl.innerHTML = SERVICES.map((s, i) => `<article id="${s.id}">
 const casesEl = document.getElementById("caseList");
 if (casesEl) casesEl.innerHTML = CASES.map(c => `<article class="case"><h3>${esc(c.industry)}</h3><p class="svc-l">${esc(c.services)}</p>
   <dl><dt>Challenge</dt><dd>${esc(c.challenge)}</dd><dt>What we did</dt><dd>${esc(c.approach)}</dd><dt>Outcome</dt><dd>${esc(c.outcome)}</dd></dl></article>`).join("");
+/* Links that leave the site (client form, LinkedIn, Instagram...) open in a new tab. Set at click time so it also covers links built by any script. */
+document.addEventListener("click", e => {
+  const a = e.target.closest && e.target.closest("a[href]");
+  if (a && /^https?:/.test(a.href) && a.origin !== location.origin) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+});
 }
