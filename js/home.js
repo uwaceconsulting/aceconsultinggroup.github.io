@@ -44,7 +44,7 @@ if (reduced || !hasIO) {
   all.forEach(el => { const t = el.dataset.reveal === "wipe" ? el.parentElement : el; watch.set(t, [...(watch.get(t) || []), el]); });
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { watch.get(e.target).forEach(el => el.classList.add("in")); io.unobserve(e.target); }
-  }), { threshold: .15, rootMargin: "0px 0px -6% 0px" });
+  }), { threshold: 0, rootMargin: "100000px 0px -6% 0px" });   // root reaches far above the screen, so anything already scrolled past is revealed too
   watch.forEach((_, t) => io.observe(t));
 }
 
@@ -86,9 +86,9 @@ if (!reduced) {
 $$("[data-carousel]").forEach((sc, i) => {
   const wrap = document.createElement("div"); wrap.className = "car"; sc.before(wrap); wrap.append(sc);
   const ctrl = document.createElement("div"); ctrl.className = "car-ctrl";
-  ctrl.innerHTML = '<button type="button" class="car-btn prev" aria-label="Previous"></button><div class="car-bar" aria-hidden="true"><i></i></div><button type="button" class="car-btn next" aria-label="Next"></button>';
+  ctrl.innerHTML = '<button type="button" class="car-btn car-prev" aria-label="Previous"></button><div class="car-bar" aria-hidden="true"><i></i></div><button type="button" class="car-btn car-next" aria-label="Next"></button>';
   wrap.append(ctrl);
-  const prev = ctrl.querySelector(".prev"), next = ctrl.querySelector(".next"), bar = ctrl.querySelector("i");
+  const prev = ctrl.querySelector(".car-prev"), next = ctrl.querySelector(".car-next"), bar = ctrl.querySelector("i");
   const step = dir => { const c = sc.firstElementChild, w = c ? c.getBoundingClientRect().width + 16 : 320; sc.scrollBy({ left: dir * w, behavior: reduced ? "auto" : "smooth" }); };
   prev.addEventListener("click", () => step(-1)); next.addEventListener("click", () => step(1));
   if (window.CSS && CSS.supports("animation-timeline: scroll()")) {
